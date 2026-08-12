@@ -8,7 +8,7 @@ public:
         for(int i =0;i<n;i++){
             sum+=nums[i];
             int remove=sum-k;
-            if(m.find(remove)!=m.end())
+           // if(m.find(remove)!=m.end())
                 cnt+=m[remove];
             m[sum]+=1;
         }
