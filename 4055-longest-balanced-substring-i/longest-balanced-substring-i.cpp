@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool check(vector<int> hash){
+    bool check( vector<int> &hash){
         int common=0;
         for(int i =0;i<26;i++){
             if(hash[i]==0) continue;
@@ -11,6 +11,7 @@ public:
         }
         return true;
     }
+    
     int longestBalanced(string s) {
         int maxlen=INT_MIN;
         for(int i=0;i<s.size();i++){
