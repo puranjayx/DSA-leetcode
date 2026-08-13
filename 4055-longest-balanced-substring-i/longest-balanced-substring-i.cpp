@@ -13,7 +13,7 @@ public:
     }
     
     int longestBalanced(string s) {
-        int maxlen=INT_MIN;
+        int maxlen=0;
         for(int i=0;i<s.size();i++){
             vector<int> hash(26,0);
             for(int j=i;j<s.size();j++){
