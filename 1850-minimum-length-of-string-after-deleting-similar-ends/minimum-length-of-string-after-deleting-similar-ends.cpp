@@ -4,7 +4,8 @@ public:
         int n=str.size();
         int i =0;
         int j =n-1;
-        while(i<j && str[i]==str[j]){
+        while(i<j){
+            if(str[i]!=str[j]) break;
             char ch =str[i];
             while(i<j && str[i]==ch){
                 i++;
