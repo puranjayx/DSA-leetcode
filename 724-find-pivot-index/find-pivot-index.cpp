@@ -1,0 +1,39 @@
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+         int n =nums.size();
+         int sum =0;
+         for(int i =0;i<n;i++){
+            sum+=nums[i];
+         }
+         int left=0;
+         int right =0;
+         for(int i=0;i<n;i++){
+            right = sum-left-nums[i];
+            //left(prefix of any i ) + nums[i] + right(suffix of this i)=sum
+
+            if(left==right) return i;
+            left+=nums[i];
+            
+         }
+         return -1;
+    //     if(n == 0) return -1;
+    //     vector<int> prefix(n,0);
+    //     vector<int> suffix(n,0);
+    //     int index;
+    //     for(int i =1;i<n;i++){
+    //         prefix[i]=prefix[i-1]+nums[i-1];
+    //     }
+    //      for(int i =n-2;i>=0;i++){
+    //         suffix[i]=suffix[i+1]+nums[i+1];
+    //     }
+    //      for(int i =0;i<n;i++){
+    //         if(prefix[i]==suffix[i]) {
+    //             return i;
+               
+    //         }
+           
+    //     }
+    //      return -1;
+     }
+};
