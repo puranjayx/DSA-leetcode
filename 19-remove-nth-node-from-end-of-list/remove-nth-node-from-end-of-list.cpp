@@ -29,9 +29,9 @@ public:
             return head;
         }
         int pos = cnt-n;
-        int i =0;
+        int i =1;
         temp=head;
-        while(i<pos-1){
+        while(i<pos){
             temp=temp->next;
             i++;
         }
