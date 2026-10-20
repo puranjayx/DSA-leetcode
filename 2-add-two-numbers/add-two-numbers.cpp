@@ -13,8 +13,10 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode * t1= l1;
         ListNode * t2= l2;
-        ListNode * dummy= new ListNode(-1);
-        ListNode * curr=dummy;
+        //ListNode * dummy= new ListNode(-1);
+        //ListNode * curr=dummy;
+        ListNode* head=NULL;
+        ListNode*temp=NULL;
         int carry =0;
         int sum=0;
         while(t1!=NULL || t2!=NULL){
@@ -23,17 +25,27 @@ public:
             if(t2!=NULL) sum+=t2->val;
             int num = sum % 10;
             ListNode * newnode= new ListNode(num);
+            if(head==NULL){
+                head=newnode;
+                temp=head;
+            }
+            else{
+                temp->next=newnode;
+                temp=newnode;
+            }
             carry = sum/10;
 
-            curr->next=newnode;
-            curr=curr->next;
+            // curr->next=newnode;
+            // curr=curr->next;
             if(t1!=NULL) t1=t1->next;
             if(t2!=NULL) t2=t2->next;
         }
         if(carry!=0){
             ListNode * newnode= new ListNode(carry);
-            curr->next=newnode;
+            //curr->next=newnode;
+            temp->next=newnode;
         }
-        return dummy->next;
+        //return dummy->next;
+        return head;
     }
 };
