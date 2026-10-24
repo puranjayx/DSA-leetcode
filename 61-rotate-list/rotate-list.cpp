@@ -26,18 +26,7 @@ public:
         for(int i =0;i<k;i++){
             fast=fast->next;
         }
-        // if(fast==NULL){
-        //     ListNode * curr=head;
-        //     ListNode * nextnode=head;
-        //     ListNode * prev=NULL;
-        //     while(nextnode!=NULL){
-        //         nextnode=curr->next;
-        //         curr->next=prev;
-        //         prev=curr;
-        //         curr=nextnode;
-        //     }
-        //     return prev;
-        // }
+        
         while(fast->next!=NULL){
             fast=fast->next;
             slow=slow->next;
